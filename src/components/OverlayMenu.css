@@ -1,0 +1,132 @@
+.overlay-wrapper {
+    visibility: hidden;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 100;
+  }
+  
+  .overlay-wrapper.active {
+    visibility: visible;
+  }
+  
+  .overlay-menu {
+    width: 100%;
+    height: 100%;
+    z-index: -15;
+    opacity: 0;
+    left: 0;
+  }
+  
+  .overlay-wrapper.active .overlay-menu {
+    opacity: 1;
+    z-index: 15;
+  }
+  
+  /* Add the rest of the CSS here */
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+/* 05 - OVERLAY-MENU */
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+.overlay-wrapper, .overlay-wrapper-video{visibility: hidden; width: 100%; height: 100%; position: fixed; z-index: 100;}
+.overlay-wrapper.active, .overlay-wrapper-video.active{visibility: visible;}
+.overlay-menu{width: 100%; height: 100%; z-index: -15; opacity: 0; left: 0;}
+.overlay-wrapper.active .overlay-menu{opacity: 1; z-index: 15;}
+.overlay-menu ul{display: inline-block; width: 100%; z-index: 6; list-style-type: none;}
+.overlay-menu ul > li{position: relative; float: left; margin: 15px 0; padding: 5px 0; font-size: 18px; width: 100%;}
+.overlay-menu ul > li > ul{position: absolute; width: 100%; visibility: hidden; opacity: 0; left: calc(100% + 10px); padding: 20px 20px; background-color: #222; z-index: 6; list-style-type: none; text-align: left;}
+.overlay-menu ul > li > ul > li{font-size: 14px; padding: 10px 0; margin: 0;}
+.overlay-menu ul > li > a:before{position: absolute; width: 0; height: 1px; background: #fff; content: ""; left: 0; bottom: 0;}
+.overlay-menu ul > li.active > a:before{width: 100%;}
+.overlay-menu ul > li > ul > li a:before{position: absolute; width: 0; height: 1px; background: #fff; content: ""; left: 0; bottom: 0;}
+.overlay-menu a{color: white; position: relative; padding-bottom: 10px;}
+.overlay-animation:before{width: 0; height: 100%; position: absolute; left: 50%;  top: 0; background-color: rgba(34,34,34,0.95); content: "";}
+.overlay-animation:after{width: 0; height: 100%; position: absolute; right: 50%;  top: 0; background-color: rgba(34,34,34,0.95); content: "";}
+.overlay-wrapper.active .overlay-animation:before, .overlay-wrapper-video.active .overlay-animation:before{width: 50%;}
+.overlay-wrapper.active .overlay-animation:after, .overlay-wrapper-video.active .overlay-animation:after{width: 50%;}
+.overlay-menu .col-md-2{padding: 0;}
+
+.btn-close *{backface-visibility:  hidden;}
+.btn-close{width: 46px; height: 46px; background: #151515; display: block; position: absolute; right: 35px; top: 30px; cursor: pointer; z-index: 7;}
+.btn-close span{width: 14px; height: 2px; position: absolute; left: 50%; top: 50%; margin: -1px 0 0 -7px; background: white; transform: rotate(45deg); -webkit-transform: rotate(45deg);}
+.btn-close span:nth-child(2){transform: rotate(135deg); -webkit-transform: rotate(135deg);}
+
+.overlay-menu .basket,
+.overlay-menu .login-wrapper{display: inline-block; width: 100%; text-align: center; opacity: 1; visibility: hidden; z-index: -10; color: #fff; -ms-transform: translateX(0px); -webkit-transform: translateX(0px); transform: translateX(0px); margin-left: 0; margin-right: 0; margin-bottom: 10px;}
+.overlay-menu .basket{margin-bottom: 25px;}
+.overlay-menu .basket p span{color: #fff;}
+.overlay-menu .basket .img-wrapper span{background-color: #fff; color: #222;}
+.overlay-wrapper.active .overlay-menu .basket,
+.overlay-wrapper.active .overlay-menu .login-wrapper{z-index: 10; visibility: visible;}
+
+@media (max-height: 720px) {
+  .overlay-menu{position: fixed; top: 0; left: 0; width: 100%; height: 100%; overflow-y: auto; -webkit-overflow-scrolling: touch; padding: 70px 15px 15px 15px;}
+}
+
+@media (min-width: 992px) {
+  .btn-close:hover {background: white;}
+  .btn-close:hover span{background: #151515;}
+  .overlay-menu ul > li:hover > ul{visibility: visible; opacity: 1; left: 100%;}
+  .overlay-menu ul > li:hover > a:before{width: 100%;}
+  .overlay-menu ul > li > ul > li a:hover{color: #fff;}
+}
+@media (min-width: 992px) {
+  .overlay-menu ul{text-align: center;}
+}
+@media (max-width: 991px) {
+  .overlay-menu{position: fixed; top: 0; left: 0; width: 100%; height: 100%; overflow-y: auto; -webkit-overflow-scrolling: touch; padding: 70px 15px 15px 15px;}
+  .overlay-menu a{float: left;}
+  .overlay-menu ul{position: relative; float: left; text-align: left;}
+  .overlay-menu ul > li > span{position: absolute; height: 45px; width: 45px; margin-top: -10px; right: 0; cursor: pointer;}
+  .overlay-menu ul > li > span:before{content: ""; position: absolute; top: 22px; left: 13px; height: 1px; width: 18px; background-color: white;}
+  .overlay-menu ul > li > span:after{content: ""; position: absolute; top: 13px; left: 22px; height: 18px; width: 1px; background-color: white;}
+  .clicked:after{transform: rotate(90deg); -webkit-transform: rotate(90deg); opacity: 0;}
+  .overlay-menu ul > li {margin: 0;}
+    .overlay-menu ul > li > ul{position: relative; float: left; margin: 0; transform: none; background-color: inherit; left: 10px; padding: 0px; visibility: visible; opacity: 1; display: none; transition: none; -webkit-transition: none;-ms-transition: none;-moz-transition: none;}
+  .overlay-menu ul > li > ul li a{padding: 0px;}
+
+  .overlay-menu ul > li.active.clicked ul li{padding: 10px 10px 10px 0; height: auto;}
+  .overlay-menu ul > li.active.clicked ul li a{font-size: 14px;}
+    .btn-close{top: 15px; right: 15px;}
+}
+
+/*overlay-video*/
+.overlay-wrapper.video.active{visibility: visible;}
+
+.video-wrapper{position: relative; float: left; display: block; width: 100%;}
+.video .iframe-wrapper{position: absolute; left: 0; top: 46px; bottom: 46px; right: 0;}
+.full-size{position: absolute; left: 0; top: 0; width: 100%; height: 100%;}
+
+
+/*POPUP*/
+.popup-wrapper{position: fixed; z-index: 200; left: 0; top: 0; width: 100%; height: 100%; left: -100%; transition-delay: .3s; -webkit-transition-delay: .3s;}
+.popup-wrapper.active{left: 0; transition-delay: 0s; -webkit-transition-delay: 0s;}
+.popup-wrapper .bg-layer{position: absolute; left: 0; top: -100px; right: 0; bottom: -100px; background: rgba(0,0,0,.45); transition: all .3s ease-out; -webkit-transition: all .3s ease-out; opacity: 0;}
+.popup-wrapper.active .bg-layer{opacity: 1;}
+.popup-content{position: absolute; top: 0; width: 100%; height: 100%; overflow: auto; -webkit-overflow-scrolling: touch; font-size: 0; text-align: center; transition: transform .3s ease-out, opacity .3s ease-out, left 0s .3s; -webkit-transition: transform .3s ease-out, opacity .3s ease-out, left 0s .3s; transform: scale(1.2); -webkit-transform: scale(1.2); opacity: 0; left: -10000px; padding: 15px;}
+.popup-content.active{transform: scale(1); -webkit-transform: scale(1); opacity: 1; left: 0; transition: transform .3s ease-out, opacity .3s ease-out, left 0s 0s; -webkit-transition: transform .3s ease-out, opacity .3s ease-out, left 0s 0s; position: relative;}
+.popup-content:after{display: inline-block; vertical-align: middle; height: 100%; content: "";}
+.popup-container{display: inline-block; vertical-align: middle; width: 100%; position: relative; text-align: left; background: #fff; max-width: 570px;}
+.popup-container.right{display: block; width: 100%; position: absolute; text-align: left; background: #fff; top: 130px; right: 10px;}
+.popup-container.right.scrolled{top: 100px;}
+.popup-container.size-1{max-width: 570px;}
+.popup-container.size-2{max-width: 730px;}
+.popup-container.size-3{max-width: 1170px;}
+.popup-content .layer-close{position: absolute; left: 0; bottom: 0; right: 0; height: 10000px;}
+.popup-align{padding: 50px 70px 50px 70px; overflow: hidden;}
+.popup-container .button-close{position: absolute; right: 5px; top: 5px;}
+
+.button-close{width: 40px; height: 40px; background: transparent; display: inline-block; vertical-align: bottom; cursor: pointer;}
+.button-close:before{content:""; width: 18px; height: 2px; position: absolute; left: 50%; top: 50%; margin: -1px 0 0 -7px; background: #222; transform: rotate(45deg); -webkit-transform: rotate(45deg); -moz-transition:all 150ms ease-out; -o-transition:all 150ms ease-out; -webkit-transition:all 150ms ease-out; transition:all 150ms ease-out; -ms-transition:all 150ms ease-out;}
+.button-close:after{content:""; width: 18px; height: 2px; position: absolute; left: 50%; top: 50%; margin: -1px 0 0 -7px; background: #222; transform: rotate(135deg); -webkit-transform: rotate(135deg); -moz-transition:all 150ms ease-out; -o-transition:all 150ms ease-out; -webkit-transition:all 150ms ease-out; transition:all 150ms ease-out; -ms-transition:all 150ms ease-out;}
+@media (min-width: 1200px) {
+  .button-close:hover:before,
+  .button-close:hover:after{background-color: #eef2de;}
+  .popup-wrapper.z-lower{z-index: 11;}
+}
+@media (max-width: 1199px) {
+  .popup-wrapper{z-index: 150;}
+}
+@media (max-width: 767px) {
+  .popup-align{padding: 50px 15px 50px 15px;}
+}
+  
