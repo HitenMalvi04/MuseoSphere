@@ -1,19 +1,21 @@
-import React from 'react';
-import Header from './components/Header';
-import './App.css';
-import OverlayMenu from './components/OverlayMenu';
-import Banner from './components/Banner';
-import Footer from './components/Footer';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Login from './components/Login';
+import Register from './components/Register';
+import Layout from './components/Layout';
 
-function App() {
+const App = () => {
+  const [authToken, setAuthToken] = useState(null);
+
   return (
-    <>
-      <Header />
-      <OverlayMenu/>
-      <Banner />
-      <Footer/>
-    </>
+    <Router>
+      <Routes>
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login setAuthToken={setAuthToken} />} />
+        <Route path="/dashboard" element={<Layout />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
