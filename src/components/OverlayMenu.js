@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './OverlayMenu.css'; // Ensure the CSS is properly imported
 
 const OverlayMenu = () => {
   const [isActive, setIsActive] = useState(false);

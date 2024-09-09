@@ -1,8 +1,9 @@
 import React from 'react';
-
+import '../App.css';
 const Header = () => {
   return (
-    <header className="header-style-2 demo">
+    <header className="header-style-2">
+
       <div className="wide-container-fluid">
         <div className="row">
           <div className="col-xs-2">
@@ -11,7 +12,6 @@ const Header = () => {
             </a>
           </div>
           <div className="col-xs-10 text-right">
-            {/* Fixed Navbar */}
             <ul className="header-menu open">
               <li className="active"><a href="index.html"><span>Home</span></a></li>
               <li><a href="about.html"><span>About us</span></a></li>
