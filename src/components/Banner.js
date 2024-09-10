@@ -1,10 +1,12 @@
-import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react'; // Import Swiper React components
-import 'swiper/css'; // Import Swiper styles
-import 'swiper/css/autoplay'; // Import Swiper Autoplay styles
-import 'swiper/css/pagination'; // Import Swiper Pagination styles
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react"; // Import Swiper React components
+import "swiper/css"; // Import Swiper styles
+import "swiper/css/autoplay"; // Import Swiper Autoplay styles
+import "swiper/css/pagination"; // Import Swiper Pagination styles
 
-import { Autoplay, Pagination } from 'swiper/modules';
+import { Link } from "react-router-dom";
+
+import { Autoplay, Pagination } from "swiper/modules";
 
 const Banner = () => {
   return (
@@ -32,8 +34,7 @@ const Banner = () => {
                   className="banner-item myclass myclassforimage"
                   style={{
                     backgroundImage:
-                      'url(https://miro.medium.com/v2/resize:fit:720/format:webp/1*iqRbiMSHneCZ-1KgUCiYBA.jpeg)',
-                    
+                      "url(https://miro.medium.com/v2/resize:fit:720/format:webp/1*iqRbiMSHneCZ-1KgUCiYBA.jpeg)",
                   }}
                 >
                   <div className="banner-item-small-wrapper">
@@ -48,7 +49,7 @@ const Banner = () => {
                         className="banner-item-small-img"
                         style={{
                           backgroundImage:
-                            'url(https://csmvs.in/wp-content/uploads/2022/01/Shoeing-the-horse-800x604.jpg)',
+                            "url(https://csmvs.in/wp-content/uploads/2022/01/Shoeing-the-horse-800x604.jpg)",
                         }}
                       ></div>
                     </div>
@@ -61,9 +62,9 @@ const Banner = () => {
                       velit volutpat posuere.
                     </p>
                     <div className="btn-wrap">
-                      <a href="#" className="btn-1">
+                      <Link to="/events" className="btn-1">
                         <span>view more</span>
-                      </a>
+                      </Link>
                     </div>
                   </article>
                 </div>
@@ -71,14 +72,13 @@ const Banner = () => {
             </div>
           </SwiperSlide>
 
-
           {/* Slide 2 */}
           <SwiperSlide>
             <div className="banner">
               <div className="banner-inner">
                 <div
                   className="banner-item myclassforimage"
-                  style={{ backgroundImage: 'url(img/banner-img-2.jpg)' }}
+                  style={{ backgroundImage: "url(img/banner-img-2.jpg)" }}
                 >
                   <div className="banner-item-small-wrapper">
                     <div className="banner-item-small">
@@ -90,7 +90,9 @@ const Banner = () => {
                       </span>
                       <div
                         className="banner-item-small-img"
-                        style={{ backgroundImage: 'url(img/banner-img-2-1.jpg)' }}
+                        style={{
+                          backgroundImage: "url(img/banner-img-2-1.jpg)",
+                        }}
                       ></div>
                     </div>
                   </div>
@@ -101,9 +103,9 @@ const Banner = () => {
                       velit volutpat posuere. Nullam et arcu consequat.
                     </p>
                     <div className="btn-wrap">
-                      <a href="#" className="btn-1">
+                      <Link to="/events" className="btn-1">
                         <span>Discover more</span>
-                      </a>
+                      </Link>
                     </div>
                   </article>
                 </div>
@@ -117,7 +119,7 @@ const Banner = () => {
               <div className="banner-inner myclassforimage">
                 <div
                   className="banner-item"
-                  style={{ backgroundImage: 'url(img/banner-img-3.jpg)' }}
+                  style={{ backgroundImage: "url(img/banner-img-3.jpg)" }}
                 >
                   <div className="banner-item-small-wrapper">
                     <div className="banner-item-small">
@@ -129,7 +131,9 @@ const Banner = () => {
                       </span>
                       <div
                         className="banner-item-small-img"
-                        style={{ backgroundImage: 'url(img/banner-img-3-1.jpg)' }}
+                        style={{
+                          backgroundImage: "url(img/banner-img-3-1.jpg)",
+                        }}
                       ></div>
                     </div>
                   </div>
@@ -140,9 +144,9 @@ const Banner = () => {
                       Praesent ut mauris eget velit volutpat posuere.
                     </p>
                     <div className="btn-wrap">
-                      <a href="#" className="btn-1">
+                      <Link to="/events" className="btn-1">
                         <span>Explore now</span>
-                      </a>
+                      </Link>
                     </div>
                   </article>
                 </div>
