@@ -1,4 +1,5 @@
 import React from "react";
+import Header from "./Header";
 
 const Events = () => {
   const pageStyle = {
@@ -87,6 +88,7 @@ const Events = () => {
   };
   return (
     <div>
+      <Header />
       <div style={pageStyle}>
         <div>
           {/* header */}

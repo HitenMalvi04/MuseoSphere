@@ -51,22 +51,7 @@ const Header = () => {
                   <span>Buy a Ticket</span>
                 </a>
               </li>
-              <li>
-                <a href="portfolio.html">
-                  <span>Portfolio</span>
-                </a>
-                <ul>
-                  <li>
-                    <a href="portfolio.html">Portfolio #1</a>
-                  </li>
-                  <li>
-                    <a href="portfolio_wide.html">Portfolio #2</a>
-                  </li>
-                  <li>
-                    <a href="detail.html">Portfolio detail</a>
-                  </li>
-                </ul>
-              </li>
+
               <li>
                 <Link to="/about">
                   <span>About</span>
@@ -102,23 +87,6 @@ const Header = () => {
                 <Link to="/login">Log in &#47; Sign up</Link>
               </li>
             </ul>
-
-            {/* Basket */}
-            <div className="basket open-popup" data-rel="1">
-              <div className="img-wrapper">
-                <span>1</span> {/* Basket count */}
-              </div>
-              <p>
-                total: <span>149.95&#36;</span>
-              </p>
-            </div>
-
-            {/* Login */}
-            <div className="login-wrapper">
-              <div className="login open-popup" data-rel="2">
-                <Link to="/login">Log in &#47; Sign up</Link>
-              </div>
-            </div>
           </div>
         </div>
       </div>
