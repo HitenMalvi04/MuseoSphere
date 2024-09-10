@@ -3,7 +3,7 @@
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 header {
   position: fixed;
-  background-color: transparent;
+  background-color: white;
   width: 100%;
   left: 0;
   top: 0;
@@ -70,4 +70,66 @@ header ul.header-menu > li:hover > ul {
   opacity: 1;
   left: 0;
   /* background-color: rgb(223, 230, 230); */
+}
+
+
+.basket {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 20px;
+}
+
+.basket .img-wrapper {
+  position: relative;
+  display: inline-block;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+}
+
+.basket span {
+  font-size: 14px;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+}
+
+.basket p {
+  margin: 0;
+  font-size: 12px;
+  text-align: center;
+}
+
+.login-wrapper {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 20px;
+}
+
+.login-wrapper .login {
+  font-size: 14px;
+  color: #222;
+  cursor: pointer;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: white;
+  transition: background-color 300ms ease;
+}
+
+.login-wrapper .login:hover {
+  background-color: #f1f1f1;
+}
+
+
+.myclass{
+  height : 400px;
+}
+
+.myclassforimage{
+  height : 500px;
 }

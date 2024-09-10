@@ -1,9 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../App.css';
-const Header = () => {
-  return (
-    <header className="header-style-2">
 
+const Header = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  // Scroll effect to change header padding and add 'scrolled' class
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  return (
+    <header className={`header-style-2 ${isScrolled ? 'scrolled bg-white' : 'bg-white'}`}>
       <div className="wide-container-fluid">
         <div className="row">
           <div className="col-xs-2">
@@ -46,9 +64,8 @@ const Header = () => {
             {/* Basket */}
             <div className="basket open-popup" data-rel="1">
               <div className="img-wrapper">
-                <span>1</span>
+                <span>1</span> {/* Basket count */}
               </div>
-              <br />
               <p>total: <span>149.95&#36;</span></p>
             </div>
 
@@ -58,6 +75,7 @@ const Header = () => {
                 <span>Log in &#47; Sign up</span>
               </div>
             </div>
+            
           </div>
         </div>
       </div>

@@ -22,7 +22,7 @@ const Register = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-
+    
     if (password !== password2) {
       setError('Passwords do not match');
       return;
@@ -34,13 +34,14 @@ const Register = () => {
         email,
         password,
       });
-      
+      console.log(res);
       setSuccess(true); // Set success to true
       localStorage.setItem('token', res.data.token); // Save JWT token in localStorage
       setError('');
       navigate('/login'); // Redirect to dashboard or desired route after successful registration
     } catch (err) {
       setError(err.response.data.message || 'Registration failed');
+      console.log("came to catch");
     }
   };
 
