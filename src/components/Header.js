@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import '../App.css';
+import React, { useEffect, useState } from "react";
+import "../App.css";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -14,14 +15,18 @@ const Header = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   return (
-    <header className={`header-style-2 ${isScrolled ? 'scrolled bg-white' : 'bg-white'}`}>
+    <header
+      className={`header-style-2 ${
+        isScrolled ? "scrolled bg-white" : "bg-white"
+      }`}
+    >
       <div className="wide-container-fluid">
         <div className="row">
           <div className="col-xs-2">
@@ -31,34 +36,71 @@ const Header = () => {
           </div>
           <div className="col-xs-10 text-right">
             <ul className="header-menu open">
-              <li className="active"><a href="index.html"><span>Home</span></a></li>
-              <li><a href="about.html"><span>About us</span></a></li>
-              <li><a href="service.html"><span>Services</span></a></li>
-              <li>
-                <a href="portfolio.html"><span>Portfolio</span></a>
-                <ul>
-                  <li><a href="portfolio.html">Portfolio #1</a></li>
-                  <li><a href="portfolio_wide.html">Portfolio #2</a></li>
-                  <li><a href="detail.html">Portfolio detail</a></li>
-                </ul>
-              </li>
-              <li className="dropdown-plus">
-                <a href="blog.html"><span>Blog</span></a>
-                <ul>
-                  <li><a href="post.html">Blog post</a></li>
-                </ul>
+              <li className="active">
+                <Link to="/">
+                  <span>Home</span>
+                </Link>
               </li>
               <li>
-                <a href="shop.html"><span>Products</span></a>
+                <Link to="/events">
+                  <span>Event & Exhibition</span>
+                </Link>
+              </li>
+              <li>
+                <a href="#">
+                  <span>Buy a Ticket</span>
+                </a>
+              </li>
+              <li>
+                <a href="portfolio.html">
+                  <span>Portfolio</span>
+                </a>
                 <ul>
-                  <li><a href="shop.html">Products #1</a></li>
-                  <li><a href="shop2.html">Products #2</a></li>
-                  <li><a href="shop3.html">Products #3</a></li>
-                  <li><a href="shopdetail.html">Detail products</a></li>
+                  <li>
+                    <a href="portfolio.html">Portfolio #1</a>
+                  </li>
+                  <li>
+                    <a href="portfolio_wide.html">Portfolio #2</a>
+                  </li>
+                  <li>
+                    <a href="detail.html">Portfolio detail</a>
+                  </li>
                 </ul>
               </li>
-              <li><a href="checkout.html"><span>Checkout</span></a></li>
-              <li><a href="contact.html"><span>Contact us</span></a></li>
+              <li>
+                <Link to="/about">
+                  <span>About</span>
+                </Link>
+              </li>
+              <li>
+                <a href="shop.html">
+                  <span>Collection</span>
+                </a>
+                <ul>
+                  <li>
+                    <a href="#">Products #1</a>
+                  </li>
+                  <li>
+                    <a href="#">Products #2</a>
+                  </li>
+                  <li>
+                    <a href="#">Products #3</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="checkout.html">
+                  <span>Checkout</span>
+                </a>
+              </li>
+              <li>
+                <a href="contact.html">
+                  <span>Contact us</span>
+                </a>
+              </li>
+              <li>
+                <Link to="/login">Log in &#47; Sign up</Link>
+              </li>
             </ul>
 
             {/* Basket */}
@@ -66,16 +108,17 @@ const Header = () => {
               <div className="img-wrapper">
                 <span>1</span> {/* Basket count */}
               </div>
-              <p>total: <span>149.95&#36;</span></p>
+              <p>
+                total: <span>149.95&#36;</span>
+              </p>
             </div>
 
             {/* Login */}
             <div className="login-wrapper">
               <div className="login open-popup" data-rel="2">
-                <span>Log in &#47; Sign up</span>
+                <Link to="/login">Log in &#47; Sign up</Link>
               </div>
             </div>
-            
           </div>
         </div>
       </div>
