@@ -1,15 +1,16 @@
--------------------------------------------------------------------------------------------------------------------------------
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
 /* 06 - HEADER */
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 header {
   position: fixed;
-  background-color: white;
+  background-color: transparent;
   width: 100%;
   left: 0;
   top: 0;
   z-index: 50;
-  padding: 25px 0;
-  transition: all 300ms ease-out;
+  padding: 10px 0;
+  /* transition: all 300ms ease-out; */
 
   transition: background-color 300ms ease-out;
 }
@@ -50,8 +51,8 @@ header ul.header-menu.open {
 header ul.header-menu > li {
   position: relative;
   display: inline-block;
-  margin: 0 5px;
-  font-size: 13px;
+  margin: 0 10px;
+  font-size: 15px;
   vertical-align: middle;
   
 }
@@ -60,6 +61,13 @@ header ul.header-menu > li > a {
   display: block;
   height: 30px;
   line-height: 31px;
+  padding: 0 20px;
+  color: #222;
+}
+header ul.header-menu > li > Button {
+  display: block;
+  height: 30px;
+  line-height: 31px;  
   padding: 0 20px;
   color: #222;
 }
@@ -72,59 +80,50 @@ header ul.header-menu > li:hover > ul {
   /* background-color: rgb(223, 230, 230); */
 }
 
-
-.basket {
-  display: inline-block;
-  vertical-align: middle;
-  margin-left: 20px;
-}
-
-.basket .img-wrapper {
+/* Hamburger */
+.hamburger-icon, .hamburger-icon-2 {
+  width: 40px;
+  height: 45px;
   position: relative;
-  display: inline-block;
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 50%;
-}
-
-.basket span {
-  font-size: 14px;
-  position: absolute;
-  top: -10px;
-  right: -10px;
-  background-color: red;
-  color: white;
-  border-radius: 50%;
-  padding: 2px 6px;
-}
-
-.basket p {
-  margin: 0;
-  font-size: 12px;
-  text-align: center;
-}
-
-.login-wrapper {
-  display: inline-block;
-  vertical-align: middle;
-  margin-left: 20px;
-}
-
-.login-wrapper .login {
-  font-size: 14px;
-  color: #222;
   cursor: pointer;
-  padding: 5px 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: white;
-  transition: background-color 300ms ease;
 }
 
-.login-wrapper .login:hover {
-  background-color: #f1f1f1;
+.logoclass{
+  font-size : 10px;
 }
 
+.hamburger-icon span, .hamburger-icon-2 span {
+  background-color: #222;
+  height: 2px;
+  width: 18px;
+  position: absolute;
+  transition: all 150ms ease-out;
+}
+
+.hamburger-icon span:nth-child(1), .hamburger-icon-2 span:nth-child(1) {
+  bottom: 27px;
+}
+
+.hamburger-icon span:nth-child(2), .hamburger-icon-2 span:nth-child(2) {
+  bottom: 21px;
+}
+
+.hamburger-icon span:nth-child(3), .hamburger-icon-2 span:nth-child(3) {
+  bottom: 15px;
+}
+
+/* Active Hamburger state */
+.hamburger-icon.active span:nth-child(1), .hamburger-icon-2.active span:nth-child(1) {
+  transform: rotate(45deg) translateX(4px) translateY(4px);
+}
+
+.hamburger-icon.active span:nth-child(2), .hamburger-icon-2.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-icon.active span:nth-child(3), .hamburger-icon-2.active span:nth-child(3) {
+  transform: rotate(-45deg) translateX(4px) translateY(-5px);
+}
 
 .myclass{
   height : 400px;
@@ -132,4 +131,147 @@ header ul.header-menu > li:hover > ul {
 
 .myclassforimage{
   height : 500px;
+}
+
+.popup-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 500px;
+}
+
+.popup-container {
+  position: relative;
+  text-align: center;
+}
+
+.layer-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.button-close {
+  cursor: pointer;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.social-buttons a {
+  display: block;
+  margin: 10px 0;
+}
+
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+/* 07 - FOOTER */
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+footer {
+  padding: 45px 0;
+  border-top: 1px solid #e3e3e3;
+  position: relative;
+  z-index: 1;
+  background: #fff;
+}
+
+footer ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+footer ul li {
+  margin-bottom: 5px;
+}
+
+footer ul li a {
+  color: #989898;
+  text-decoration: none;
+}
+
+footer .copyright a {
+  color: #222;
+}
+
+footer .copyright .fa {
+  color: #e9edd9;
+}
+
+/* Follow section */
+.follow {
+  font-size: 0;
+}
+
+.follow .item {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  color: #cbcbcb;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 5px;
+  position: relative;
+  border: 1px solid #cbcbcb;
+  background: #fff;
+  font-size: 12px;
+  vertical-align: bottom;
+}
+
+.follow .item:last-child {
+  margin-right: 0;
+}
+
+.follow .item .fa {
+  position: relative;
+  line-height: 28px;
+}
+
+.follow .item:before {
+  position: absolute;
+  border-radius: 50%;
+  left: -2px;
+  top: -2px;
+  right: -2px;
+  bottom: -2px;
+  content: "";
+  background: #222;
+  transform: scale(0);
+}
+
+@media (min-width: 1200px) {
+  .follow .item:hover:before {
+      transform: scale(1);
+  }
+  .follow .item:hover {
+      color: #fff;
+  }
+  footer ul li a:hover {
+      color: #222;
+  }
+  footer .copyright a:hover {
+      color: #e9edd9;
+  }
+}
+
+@media (max-width: 991px) {
+  footer {
+      text-align: center;
+  }
 }

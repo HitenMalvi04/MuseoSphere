@@ -6,6 +6,7 @@ import Banner from './Banner';
 import OverlayMenu from './OverlayMenu';
 import MainContent from './MainContent';
 import EventInDashboard from './EventInDashboard';
+import { Outlet } from "react-router-dom";
 
 const Layout = () => {
   return (
@@ -13,8 +14,8 @@ const Layout = () => {
         <Header />
         <OverlayMenu/>
         {/* <MainContent/> */}
-        <Banner />
-        <EventInDashboard/>
+        <Outlet/>
+        
         <Footer />
     </>
   );

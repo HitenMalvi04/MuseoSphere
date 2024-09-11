@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "../App.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // Track login state
+  const navigate = useNavigate();
+  // const [userData, setUserData] = ({});
 
   // Scroll effect to change header padding and add 'scrolled' class
   useEffect(() => {
@@ -21,24 +24,44 @@ const Header = () => {
     };
   }, []);
 
+  // Check if token exists in localStorage on component mount
+  useEffect(() => {
+    const token = sessionStorage.getItem('token');
+    // setUserData(JSON.stringify(token));
+    if (token) {
+      setIsLoggedIn(true);
+    }
+  }, []);
+
+  // Handle logout function
+  const handleLogout = () => {
+    sessionStorage.clear(); // Remove token
+    setIsLoggedIn(false); // Update state to show login button
+    navigate('/'); // Redirect to home page or any other page
+  };
+
   return (
     <header
-      className={`header-style-2 ${
-        isScrolled ? "scrolled bg-white" : "bg-white"
+      className={` header-style-2 ${
+        isScrolled ? "scrolled bg-white" : "transperent"
       }`}
     >
-      <div className="wide-container-fluid">
+      <div className="wide-container-fluid ">
         <div className="row">
           <div className="col-xs-2">
-            <a className="logo" href="index.html">
-              <img src="img/logo.png" alt="logo" />
+            <a className="logo" href="">
+              
             </a>
           </div>
           <div className="col-xs-10 text-right">
             <ul className="header-menu open">
+              <li>
+                {/* <h1>Welcome,{userData.token.name}</h1> */}
+                <h1>Welcome</h1>
+              </li>
               <li className="active">
                 <Link to="/">
-                  <span>Home</span>
+                  <span>MuseoSphere</span>
                 </Link>
               </li>
               <li>
@@ -47,45 +70,31 @@ const Header = () => {
                 </Link>
               </li>
               <li>
-                <a href="#">
+                <Link to="/TicketBooking">
                   <span>Buy a Ticket</span>
-                </a>
+                </Link>
               </li>
-
               <li>
                 <Link to="/about">
                   <span>About</span>
                 </Link>
               </li>
               <li>
-                <a href="shop.html">
-                  <span>Collection</span>
-                </a>
-                <ul>
-                  <li>
-                    <a href="#">Products #1</a>
-                  </li>
-                  <li>
-                    <a href="#">Products #2</a>
-                  </li>
-                  <li>
-                    <a href="#">Products #3</a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a href="checkout.html">
-                  <span>Checkout</span>
-                </a>
-              </li>
-              <li>
                 <a href="contact.html">
                   <span>Contact us</span>
                 </a>
               </li>
-              <li>
-                <Link to="/login">Log in &#47; Sign up</Link>
-              </li>
+              {isLoggedIn ? (
+                <li>
+                  <button className="btn btn-link" onClick={handleLogout}>
+                    Logout
+                  </button>
+                </li>
+              ) : (
+                <li>
+                  <Link to="/login">Log in &#47; Sign up</Link>
+                </li>
+              )}
             </ul>
           </div>
         </div>
